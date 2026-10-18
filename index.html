@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#171e30"><title>Moonberry · A little life on the moon</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><a class="brand" href="./"><span class="mark">◒</span> MOONBERRY <small>LUNAR HOMESTEAD</small></a><div class="top-actions"><span class="live">● OFF-WORLD. AT HOME.</span><button id="help">How to play</button><button id="save">Save</button></div></header>
+<main>
+<div class="intro"><div><div class="eyebrow">YOUR LITTLE CORNER OF THE COSMOS</div><h1>Room to grow.</h1><p>Strange soil. Stranger vegetables. A life of your own.</p></div><div id="status" class="status" aria-live="polite"></div></div>
+<section class="layout"><div class="world-wrap"><div class="world-bar"><span>◉ <b id="region">MOSSFIELD OUTPOST</b></span><span id="coordinates"></span></div><canvas id="world" width="960" height="600" tabindex="0" aria-label="Lunar world. Move with WASD or arrow keys. E to interact, Space to plant, water or harvest."></canvas><div id="prompt" class="prompt"></div><div class="world-footer"><span><kbd>W A S D</kbd> wander <kbd>SPACE</kbd> farm <kbd>E</kbd> interact</span><span>TAKE YOUR TIME. THE STARS WILL WAIT.</span></div><div class="mobile"><button data-move="0,-1" aria-label="Move north">↑</button><button data-move="-1,0" aria-label="Move west">←</button><button data-move="0,1" aria-label="Move south">↓</button><button data-move="1,0" aria-label="Move east">→</button><button id="action">Farm / interact</button></div></div>
+<aside><section class="card"><div class="eyebrow">LUNAR LEASE · <span id="lease"></span></div><h2>A place among the stars</h2><div class="rent-line"><b id="rent"></b><span id="deadline"></span></div><div class="track"><i id="rent-progress"></i></div><p id="rent-note"></p><button id="pay" class="primary">Pay rent</button></section>
+<section class="card"><div class="card-heading"><h2>Seed satchel</h2><span>01—04</span></div><p>Choose a seed. Tend something unusual.</p><div id="seeds"></div><div class="inventory" id="inventory"></div></section>
+<section class="card journal"><div class="eyebrow">FIELD NOTES</div><h2>The moon has secrets.</h2><p id="quest"></p><div id="notes"></div></section></aside></section>
+<section class="bottom"><div><span class="eyebrow">A SMALL ROUTINE</span><p>Plant. Water. Wander. Come home.</p></div><div class="bottom-actions"><button id="map">✧ Star chart</button><button id="shop">↗ Trading post</button><button id="sleep">☾ Rest until tomorrow</button></div></section>
+<div id="toast" role="status" aria-live="polite"></div>
+</main><footer>MOONBERRY <span>A cozy expedition on the far side of ordinary.</span><div><button id="export">Export save</button><label class="file">Import save<input type="file" id="import" accept="application/json,.json"></label><button id="reset">New homestead</button></div></footer>
+<dialog id="dialog"><div id="dialog-body"></div><button id="close">Back to the moon ↗</button></dialog>
+<script src="engine.js"></script><script src="game.js"></script></body></html>
