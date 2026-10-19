@@ -4,7 +4,13 @@ An original cozy browser game about building a life in a lunar village. Farm unu
 
 **Play:** https://calebgailitis-rgb.github.io/Moonberry/
 
-## The current update
+## The current update · v6
+
+- Friendly conversations along the bottom of the screen keep you and your neighbor visible. Original pixel portraits, two-way replies, remembered answers, daily lines, and personal stories at 30/60 trust.
+- Neighbors offer advice based on ripe/dry crops, oxygen, and discovered memories. Talking uses no oxygen and grants trust once daily.
+- Oxygen lasts five times longer: one point per ten outdoor actions, about 1,000 actions per full tank.
+- Cute chunky pixel robots, expressive astronauts, six pixel crop sprites, stepped roofs and foliage, brighter lunar moss, flowers, moonmoths, and successful-tool sparkles.
+
 
 - Original illustrated tools, seed packets, crops, and materials, shared across the item bar, shop, and dropped items.
 - A larger safe village with five residents and thirteen village landmarks, including a cafe, community hall, clinic, library, park, plaza, landing pad, workshop, and request board.
@@ -84,7 +90,7 @@ The two rare seeds are dustling drops. Each defeat independently has a 10% chanc
 
 The larger village is safe from dustlings (surface x 5–30, y 2–19). Wilderness spawn checks are far apart, only one dustling can be active, and a fresh game/overnight rest gives 180 actions before an encounter check. Attacks deal four health.
 
-Oxygen drains one every two movement/tool actions outside. At zero oxygen, each action outside causes five health damage while you can still retreat. At zero health, the emergency tether brings you into your habitat. Rest indoors to recover health, oxygen, energy, and bucket water. Crops can be eaten for health/energy; they do not refill oxygen.
+Oxygen drains one every ten movement/tool actions (about 1,000 actions per full tank) outside. At zero oxygen, each action outside causes five health damage while you can still retreat. At zero health, the emergency tether brings you into your habitat. Rest indoors to recover health, oxygen, energy, and bucket water. Crops can be eaten for health/energy; they do not refill oxygen.
 
 Rent starts at 80 credits, is due at the end of every seventh day, rises by 20 per week, and caps at 200. Paying early covers the current week. Unpaid rent carries forward without eviction. A bankrupt homestead with no remaining seeds, crops, or harvest receives recovery seeds after resting.
 
@@ -100,7 +106,7 @@ Open index.html directly, or run `npm start` and visit http://127.0.0.1:4173. Th
 
 ## Verification and publishing
 
-`npm test` runs 54 simulation tests for farming, economy, inventory, survival, combat, jobs, quests, trust, interiors, placement safety, repeat work, indoor growing, construction/refunds, and save upgrades. Browser checks cover dialogue, a complete exploration-quest turn-in, house entry, theme persistence, item artwork, and responsive layouts.
+`npm test` runs 66 simulation tests for farming, economy, inventory, survival, combat, jobs, quests, trust, interiors, placement safety, repeat work, indoor growing, construction/refunds, and save upgrades. Browser checks cover dialogue, a complete exploration-quest turn-in, house entry, theme persistence, item artwork, and responsive layouts.
 
 GitHub Pages publishes main / (root). Keep the repository public for GitHub Free hosting. To configure a new copy: Settings → Pages → Deploy from a branch → main → / (root) → Save. See [GitHub's publishing guide](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 

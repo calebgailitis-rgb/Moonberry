@@ -1,1 +1,13 @@
-{"name":"moonberry","version":"5.0.0","private":true,"description":"An original cozy lunar village, farming and exploration game","scripts":{"test":"node --test tests/engine.test.cjs tests/survival.test.cjs tests/village.test.cjs tests/quests.test.cjs tests/home.test.cjs","start":"node serve.cjs"},"engines":{"node":">=18"}}
+{
+  "name": "moonberry",
+  "version": "6.0.0",
+  "private": true,
+  "description": "An original cozy lunar village, farming and exploration game",
+  "scripts": {
+    "test": "node --test tests/engine.test.cjs tests/survival.test.cjs tests/village.test.cjs tests/quests.test.cjs tests/home.test.cjs tests/conversations.test.cjs",
+    "start": "node serve.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

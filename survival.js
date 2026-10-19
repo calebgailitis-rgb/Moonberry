@@ -19,7 +19,7 @@
   function rescue(s,reason){s.zone='surface';s.x=9;s.y=10;s.monsters=[];note(s,`Emergency tether brought you home: ${reason}. Rest inside to recover.`);M.reveal(s);return `${reason}! Your emergency tether brought you inside the habitat. Rest to recover.`;}
   M.tick=(s,rng=Math.random)=>{
     s.turn++;
-    if(!M.insideHome(s)&&s.turn%2===0)s.oxygen=Math.max(0,s.oxygen-1);
+    if(!M.insideHome(s)&&s.turn%10===0)s.oxygen=Math.max(0,s.oxygen-1);
     if(s.turn%3===0)for(const m of s.monsters){
       if(m.zone!==s.zone)continue;const d=Math.abs(m.x-s.x)+Math.abs(m.y-s.y);
       if(d<=1&&!M.near(s,'home')){s.health=Math.max(0,s.health-10);continue;}
@@ -30,7 +30,7 @@
     if(s.turn>=s.nextSpawn){s.nextSpawn=s.turn+24+Math.floor(rng()*20);if(s.monsters.length<3){const options=[];for(let dy=-6;dy<=6;dy++)for(let dx=-6;dx<=6;dx++){const x=s.x+dx,y=s.y+dy,d=Math.abs(dx)+Math.abs(dy);if(d<5||d>7||blocked(M.terrain(x,y,s.zone))||M.POI.some(p=>Math.abs(p.x-x)+Math.abs(p.y-y)<4)||s.monsters.some(m=>m.zone===s.zone&&m.x===x&&m.y===y))continue;options.push({x,y,zone:s.zone,hp:2});}if(options.length)s.monsters.push(options[Math.min(options.length-1,Math.floor(rng()*options.length))]);}}
     if(s.oxygen<=0&&!M.insideHome(s))s.health=Math.max(0,s.health-5);if(s.health<=0)return rescue(s,'Suit health depleted');return s.oxygen<=0&&!M.insideHome(s)?'Oxygen empty! Losing 5 health per action. Get inside your house.':'';
   };
-  M.move=(s,dx,dy,rng=Math.random)=>{if(Math.abs(dx)+Math.abs(dy)!==1)return 'Choose one direction.';s.facing=[dx,dy];const x=s.x+dx,y=s.y+dy;if(blocked(M.terrain(x,y,s.zone)))return 'Find a path around the rocks.';if(s.monsters.some(m=>m.zone===s.zone&&m.x===x&&m.y===y))return 'A dustling blocks the path. Face it and use your laser.';if(s.health<=0)return 'Rest inside the habitat to recover.';s.x=x;s.y=y;s.steps++;if(s.steps%(4+s.upgrades.boots*4)===0)s.energy=Math.max(0,s.energy-1);M.reveal(s);return M.tick(s,rng)||(s.oxygen===20?'Oxygen low. Head inside the house at 9° E / 10° N and rest.':'');};
+  M.move=(s,dx,dy,rng=Math.random)=>{if(Math.abs(dx)+Math.abs(dy)!==1)return 'Choose one direction.';s.facing=[dx,dy];const x=s.x+dx,y=s.y+dy;if(blocked(M.terrain(x,y,s.zone)))return 'Find a path around the rocks.';if(s.monsters.some(m=>m.zone===s.zone&&m.x===x&&m.y===y))return 'A dustling blocks the path. Face it and use your laser.';if(s.health<=0)return 'Rest inside the habitat to recover.';s.x=x;s.y=y;s.steps++;if(s.steps%(4+s.upgrades.boots*4)===0)s.energy=Math.max(0,s.energy-1);M.reveal(s);const oxygenBefore=s.oxygen;return M.tick(s,rng)||(oxygenBefore>20&&s.oxygen<=20?'Oxygen low. Head inside the house at 9° E / 10° N and rest.':'');};
   M.canTill=(x,y)=>!blocked(M.terrain(x,y))&&!M.POI.some(p=>Math.abs(p.x-x)<=1&&Math.abs(p.y-y)<=1)&&!M.resource(x,y,'surface');
   M.targetPlot=s=>{if(s.zone!=='surface')return null;for(const [dx,dy] of [[0,0],s.facing,[0,1],[1,0],[-1,0],[0,-1]]){const k=key(s.x+dx,s.y+dy);if(s.beds.includes(k))return k;}return null;};
   M.hoe=s=>{if(s.zone!=='surface')return 'The hollow is solid rock. Make your garden on the surface.';const k=key(s.x,s.y);if(!M.canTill(s.x,s.y))return 'Choose open dust away from buildings, crystals, and rocks.';if(s.beds.includes(k))return 'A bed is already here. Equip seeds or your bucket.';if(s.energy<2)return 'Rest inside the habitat to recover energy.';s.energy-=2;s.beds.push(k);return 'Your garden, your choice. Soil tilled underfoot. Equip seeds to plant here.';};
