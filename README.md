@@ -4,7 +4,10 @@ An original cozy browser game about building a life in a lunar village. Farm unu
 
 **Play:** https://calebgailitis-rgb.github.io/Moonberry/
 
-## The current update · v7
+## The current update · v7.2
+
+- The full eight-slot backpack now sits beside the world, with illustrated tools, seeds, crops and material counts. Shared chest stacks and installed equipment are visible underneath. It remains available in expanded play. On phones, all eight carry slots stay docked at the bottom of the screen. Click carried items to equip; chest stacks open storage without moving supplies remotely.
+
 
 - Eight neighbors with distinct specialties: Mox waters, Bolt gathers wood, Lumi harvests, Nova plants, Pico repairs suit health, Tali gathers stone, Wisp gathers fiber, and Orbit explores.
 - Find Tali beyond the eastern crater rim, Wisp in the southwest silver fields, and Orbit on the far northeast ridge. Walk close to discover them, have a chat, then invite them to Mossfield. Undiscovered people stay out of your crew list.

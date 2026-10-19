@@ -29,6 +29,11 @@
     document.querySelectorAll('[data-seed]').forEach(b=>b.onclick=()=>{const i=state.slots.indexOf('seed:'+b.dataset.seed);if(i>=0)M.selectSlot(state,i);save();refresh();canvas.focus({preventScroll:true});});
     $('inventory').textContent=`Harvest basket · ${state.harvest.reduce((a,b)=>a+b,0)} crops · ${totalHarvest()} cr value`;
     html('crew-summary',state.npcs.filter(n=>n.discovered).map(n=>{const r=M.RESIDENTS.find(r=>r.id===n.id);return `<div class="neighbor"><span style="color:${r.color}">◉</span><div>${r.name}<small>${M.JOBS[M.SPECIALTIES[n.id]]} specialist · ${n.job==='idle'?'Enjoying village life':n.cargo?'Returning with supplies':n.job==='return'?'Heading home':n.job+' job'}</small></div><b>♡ ${n.friendship}</b></div>`;}).join(''));
+    const stored=[...Object.keys(M.MATERIALS).map(k=>({id:'material:'+k,qty:state.stock[k]})),...state.stock.seeds.map((qty,i)=>({id:'seed:'+i,qty})),...state.stock.harvest.map((qty,i)=>({id:'harvest:'+i,qty}))].filter(item=>item.qty>0);
+    html('stash-items',stored.map(({id,qty})=>`<button class="stash-item" data-stored="${id}" aria-label="Shared chest: ${itemInfo(id).name} · ${qty}"><span class="small-art">${ItemArt.svg(id)}</span><span>${itemInfo(id).name}</span><b>${qty}</b></button>`).join(''));
+    document.querySelectorAll('[data-stored]').forEach(b=>b.onclick=depot);
+    $('stash-note').textContent=stored.length?(M.atDepot(state)?'You are near storage. Open the chest to deposit or take stacks.':'These supplies stay in the village chest. Visit it to take a stack.'):'Your shared chest is empty. Deposit supplies there; helpers deliver here too.';
+    html('equipment-summary',`<span>Moonwater kit <b>${state.upgrades.tank}/2</b></span><span>Moon boots <b>${state.upgrades.boots}/2</b></span><span>Scanner <b>${state.upgrades.scanner}/2</b></span>${state.crafted.sprinkler?'<span>✓ Sprinkler installed</span>':''}${state.crafted.drone?'<span>✓ Helper drone installed</span>':''}`);
     $('supplies').textContent=`Shared supplies · ${state.stock.wood} wood / ${state.stock.stone} stone / ${state.stock.fiber} fiber`;
     const active=M.QUESTS.filter(q=>state.questLog[q.id]==='active');
     html('quest-summary',active.length?active.map(q=>{const progress=M.questProgress(state,q.id);return `<div class="tracked-quest"><b>${q.title}</b><small>${M.RESIDENTS.find(r=>r.id===q.owner).name} · ${progress.every(p=>p.done)?'Ready to return':progress.map(p=>`${p.current}/${p.target}`).join(' · ')}</small></div>`;}).join(''):'<p>No active requests yet. Meet your neighbors or visit the board at 19 E / 8 N.</p>');
@@ -77,7 +82,7 @@
   function chart(){const seen=new Set(state.seen);let html='<p>Gold is you; lavender is a landmark. Silver dust is still unexplored.</p><div class="chart" aria-label="Explored surface map">';for(let y=0;y<M.H;y++)for(let x=0;x<M.W;x++){const visible=seen.has(M.key(x,y)),point=M.POI.some(p=>p.x===x&&p.y===y);html+=`<i class="${!visible?'hidden':state.zone==='surface'&&state.x===x&&state.y===y?'you':point?'point':''}"></i>`;}open('A small step into the unknown.',html+'</div><p>'+Math.round(seen.size/(M.W*M.H)*100)+'% of the surface charted · '+state.relics.length+' / 3 memories</p>');}
   $('help').onclick=help;$('close').onclick=()=>$('dialog').close();$('save').onclick=()=>save(false);$('pay').onclick=()=>act(()=>M.pay(state));$('sleep').onclick=rest;$('shop').onclick=shop;$('map').onclick=chart;
   $('action').onclick=use;$('interact').onclick=interact;$('drop').onclick=()=>act(()=>M.dropSelected(state));
-  $('crew').onclick=crew;$('supplies-button').onclick=depot;
+  $('crew').onclick=crew;$('supplies-button').onclick=depot;$('pack-chest').onclick=depot;
   $('crew-quick').onclick=crew;$('supplies-quick').onclick=depot;
   $('quests').onclick=()=>journal();$('quests-quick').onclick=()=>journal();
   $('home-tools').onclick=decorate;$('eat').onclick=()=>act(()=>M.eatSelected(state));

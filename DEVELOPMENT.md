@@ -1,5 +1,9 @@
 # Moonberry development notes
 
+## v7.2 — Everything on screen
+
+Moved the real eight-slot backpack beside the world. Shared chest contents (materials, seeds and harvest), upgrade levels and installed workshop equipment appear below it. Expanded play retains the inventory. Inventory selection uses the existing carry slots and preserves storage proximity rules. On phones all eight carry slots dock at the bottom while the world stays visible. Browser checks verified click-to-equip, a real wood deposit (bag 2 to 0, chest 0 to 2), expanded mode, 390px layout without overflow, and no console errors.
+
 ## v7 — A crew worth finding
 
 Each of eight original characters now has one distinct specialty. Existing five remain known and keep their jobs. Tali (stone), Wisp (fiber) and Orbit (scouting) wait outside the village; walking within three tiles discovers them, a chat earns initial trust, and an explicit invitation recruits them.
