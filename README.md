@@ -62,7 +62,7 @@ Outdoors, B offers paths, fences, lanterns, benches, and raised grow beds. Build
 
 ## Friends, trust, and quests
 
-Mox, Bolt, Lumi, Nova, and Pico each have two requests. Chatting gives 10 trust once per day; gifting an equipped harvested crop gives 15 once per day. Quests award 20–30 trust plus credits. At 10 trust, a robot will help with jobs. At 60 trust, a close friend works twice as fast without a helper drone. Trust never decays.
+Mox, Bolt, Lumi, Nova, and Pico each have two requests. Chatting gives 10 trust once per day; gifting an equipped harvested crop gives 15 once per day. Quests award 20–30 trust plus credits. At 10 trust, a robot will help with jobs. Friendship at 30, 60 and 90 trust improves speed and specialty bonuses; each helper panel shows the current benefits. Trust never decays.
 
 Accept requests in the journal or through a neighbor's conversation. Return to that neighbor to turn in a completed request. Delivery items are counted across your carry slots and shared chest, and consumed only on successful turn-in. Exploration/crafting accomplishments are not consumed. Rewards can only be claimed once.
 
