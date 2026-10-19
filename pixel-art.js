@@ -1,7 +1,7 @@
 /* Hand-authored pixel shapes, shared by world sprites and conversation portraits. */
 (function(root){
   'use strict';
-  const palettes={mox:['#5a8261','#a9d67d','#e4f0b5'],bolt:['#9a6261','#edba77','#ffe3ab'],lumi:['#7567a8','#bda2ef','#eee0ff'],nova:['#ad698c','#f1acb4','#ffe0c6'],pico:['#4b8991','#92d8cf','#dbf5d0']};
+  const palettes={tali:['#87637c','#d9b596','#ffe3b0'],wisp:['#5c8c86','#c4d994','#eff0c5'],orbit:['#5c76a2','#94cce2','#eef2cf'],mox:['#5a8261','#a9d67d','#e4f0b5'],bolt:['#9a6261','#edba77','#ffe3ab'],lumi:['#7567a8','#bda2ef','#eee0ff'],nova:['#ad698c','#f1acb4','#ffe0c6'],pico:['#4b8991','#92d8cf','#dbf5d0']};
   function robot(id,mood='happy',time=0){const [dark,body,light]=palettes[id]||palettes.mox,a=[],r=(x,y,w,h,c)=>a.push([x,y,w,h,c]);
     r(5,17,10,2,'#394454');r(5,9,10,8,dark);r(6,10,8,6,body);r(3,10,2,5,dark);r(15,10,2,5,dark);r(4,10,1,4,light);r(6,17,3,3,'#394454');r(12,17,3,3,'#394454');r(7,17,2,2,body);r(12,17,2,2,body);
     r(4,3,12,7,dark);r(3,4,14,5,dark);r(4,4,12,5,body);r(5,3,10,2,light);r(5,5,10,4,'#324657');r(6,5,8,1,'#4d6b79');
@@ -9,6 +9,9 @@
     else if(Math.floor(time*2)%13===12){r(6,7,2,1,light);r(12,7,2,1,light);}
     else{r(6,6,2,2,light);r(12,6,2,2,light);r(7,6,1,1,'#fff8dd');r(13,6,1,1,'#fff8dd');r(9,8,2,1,light);}
     r(4,8,2,1,'#efa7b0');r(14,8,2,1,'#efa7b0');r(9,11,3,3,light);r(10,11,1,2,body);
+    if(id==='tali'){r(5,1,11,3,'#dca16b');r(7,0,7,2,'#ecc28b');r(9,1,3,2,'#fff1ad');r(6,12,8,4,'#86637f');r(15,13,3,5,'#a6afc2');}
+    if(id==='wisp'){r(4,10,13,2,'#d6a0be');r(13,12,3,5,'#d6a0be');r(9,0,2,3,'#76a984');r(7,0,6,1,'#d2e6a5');}
+    if(id==='orbit'){r(3,2,14,2,'#64769d');r(5,0,10,2,'#e9ca9b');r(7,5,7,2,'#8acfe2');r(7,5,1,2,'#e1f3d2');r(12,5,1,2,'#e1f3d2');r(3,12,3,5,'#9b8ebc');}
     if(id==='mox'){r(9,0,2,3,dark);r(6,0,4,2,'#6bba7b');r(10,0,4,1,'#a0db7e');r(6,15,8,2,'#e8d69f');}
     if(id==='bolt'){r(4,2,12,2,'#f7d9a0');r(6,0,8,3,'#e9a358');r(3,3,14,1,'#815e61');r(6,11,2,5,'#74657b');r(12,11,2,5,'#74657b');}
     if(id==='lumi'){r(9,0,2,3,body);r(8,0,4,1,'#fff1b9');r(9,12,3,1,'#fff1b9');r(10,11,1,3,'#fff1b9');r(3,10,3,2,'#e2b0d6');}

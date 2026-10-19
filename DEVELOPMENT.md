@@ -1,5 +1,15 @@
 # Moonberry development notes
 
+## v7 — A crew worth finding
+
+Each of eight original characters now has one distinct specialty. Existing five remain known and keep their jobs. Tali (stone), Wisp (fiber) and Orbit (scouting) wait outside the village; walking within three tiles discovers them, a chat earns initial trust, and an explicit invitation recruits them.
+
+Friendship at 10/30/60/90 affects actual simulation: gathering batches of 4/5/6/7 in a specialty, faster work intervals, extra farming steps at 60/90, wider scout radius, and stronger health care. General jobs remain available; care and scouting need their specialists. Existing jobs, supplies, homes, requests and reply memories survive migration.
+
+Validation: 79 simulation tests, including actual discovery by movement, chat/invitation gating, specialist deliveries, care without oxygen generation, scouting without remote recruitment, farming bursts, and migration from five-person v6 saves. Browser play-test found Orbit, chatted, invited them and successfully assigned scouting, with no console errors.
+
+Scheduled work is bounded through October 18, 2026, 10:37 PM America/New_York (02:37 UTC October 19). Respect this deadline and newer user directions.
+
 ## v6 — Neighbors with a little heart
 
 Shipped: bottom-screen conversations with five original pixel portraits, branching replies, remembered choices, rotating daily lines, stories at 30/60 trust, and context-aware gardening/survival advice. Oxygen drains every ten outdoor actions (five times slower). No oxygen, energy or simulation time passes during chats. Old saves upgrade without losing progress.

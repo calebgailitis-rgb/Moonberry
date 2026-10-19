@@ -4,7 +4,13 @@ An original cozy browser game about building a life in a lunar village. Farm unu
 
 **Play:** https://calebgailitis-rgb.github.io/Moonberry/
 
-## The current update · v6
+## The current update · v7
+
+- Eight neighbors with distinct specialties: Mox waters, Bolt gathers wood, Lumi harvests, Nova plants, Pico repairs suit health, Tali gathers stone, Wisp gathers fiber, and Orbit explores.
+- Find Tali beyond the eastern crater rim, Wisp in the southwest silver fields, and Orbit on the far northeast ridge. Walk close to discover them, have a chat, then invite them to Mossfield. Undiscovered people stay out of your crew list.
+- Friendship milestones at 10/30/60/90 trust improve real work: shorter intervals, larger gathering deliveries, extra farming steps, stronger care and wider scouting. The helper panel shows the current benefits.
+- Scouts clear actual map dust without collecting memories or recruiting people remotely. Suit care repairs health without refilling oxygen.
+
 
 - Friendly conversations along the bottom of the screen keep you and your neighbor visible. Original pixel portraits, two-way replies, remembered answers, daily lines, and personal stories at 30/60 trust.
 - Neighbors offer advice based on ripe/dry crops, oxygen, and discovered memories. Talking uses no oxygen and grants trust once daily.
@@ -13,7 +19,7 @@ An original cozy browser game about building a life in a lunar village. Farm unu
 
 
 - Original illustrated tools, seed packets, crops, and materials, shared across the item bar, shop, and dropped items.
-- A larger safe village with five residents and thirteen village landmarks, including a cafe, community hall, clinic, library, park, plaza, landing pad, workshop, and request board.
+- A larger safe village with five starting residents, three discoverable specialists, and thirteen village landmarks, including a cafe, community hall, clinic, library, park, plaza, landing pad, workshop, and request board.
 - Ten neighbor requests with progress tracking, trust/credit rewards, and follow-up chapters. Requests never expire. Up to three can be active.
 - A walkable habitat with movable furniture, free wall/floor palettes, and indoor crop pots.
 - Buildable outdoor paths, fences, lanterns, benches, and raised beds. Reclaiming pieces refunds their materials.
@@ -106,7 +112,7 @@ Open index.html directly, or run `npm start` and visit http://127.0.0.1:4173. Th
 
 ## Verification and publishing
 
-`npm test` runs 66 simulation tests for farming, economy, inventory, survival, combat, jobs, quests, trust, interiors, placement safety, repeat work, indoor growing, construction/refunds, and save upgrades. Browser checks cover dialogue, a complete exploration-quest turn-in, house entry, theme persistence, item artwork, and responsive layouts.
+`npm test` runs 79 simulation tests for farming, economy, inventory, survival, combat, jobs, quests, trust, interiors, placement safety, repeat work, indoor growing, construction/refunds, and save upgrades. Browser checks cover dialogue, a complete exploration-quest turn-in, house entry, theme persistence, item artwork, and responsive layouts.
 
 GitHub Pages publishes main / (root). Keep the repository public for GitHub Free hosting. To configure a new copy: Settings → Pages → Deploy from a branch → main → / (root) → Save. See [GitHub's publishing guide](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
